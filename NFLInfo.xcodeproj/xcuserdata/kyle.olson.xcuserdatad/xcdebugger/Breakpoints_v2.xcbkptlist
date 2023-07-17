@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "AC4887B0-D97E-4E43-8D24-8ADC103AF9A5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D4D570B-E4DD-4CD5-B6CA-B7654C781D4C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NFLInfo/API/APICaller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "fetchTeamData()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "5D4D570B-E4DD-4CD5-B6CA-B7654C781D4C - 92bb9db2c8956efe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for NFLInfo.fetchTeamData() async -&gt; Swift.Array&lt;NFLInfo.Team&gt;"
+                  moduleName = "NFLInfo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyle.olson/Documents/Repositories/NFLInfo/NFLInfo/API/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "2572">
+               </Location>
+               <Location
+                  uuid = "5D4D570B-E4DD-4CD5-B6CA-B7654C781D4C - 92bb9db2c8956efe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for NFLInfo.fetchTeamData() async -&gt; Swift.Array&lt;NFLInfo.Team&gt;"
+                  moduleName = "NFLInfo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyle.olson/Documents/Repositories/NFLInfo/NFLInfo/API/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "2936">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
