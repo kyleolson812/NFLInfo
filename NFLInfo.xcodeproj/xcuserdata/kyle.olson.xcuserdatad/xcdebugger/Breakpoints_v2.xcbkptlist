@@ -52,5 +52,101 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB640FAF-9EA6-42D5-97F7-6125DFCDD518"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NFLInfo/API/APICaller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "fetchTeamData2()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "AB640FAF-9EA6-42D5-97F7-6125DFCDD518 - a6d6b1bc92684ea3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for NFLInfo.fetchTeamData2() async -&gt; Swift.Array&lt;NFLInfo.Team&gt;"
+                  moduleName = "NFLInfo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyle.olson/Documents/Repositories/NFLInfo/NFLInfo/API/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1672">
+               </Location>
+               <Location
+                  uuid = "AB640FAF-9EA6-42D5-97F7-6125DFCDD518 - a6d6b1bc92684ea3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for NFLInfo.fetchTeamData2() async -&gt; Swift.Array&lt;NFLInfo.Team&gt;"
+                  moduleName = "NFLInfo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyle.olson/Documents/Repositories/NFLInfo/NFLInfo/API/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1656">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CCCDD168-627A-4127-BCC3-8F8D7FFB30AD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NFLInfo/API/APICaller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "fetchTeamData2()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "CCCDD168-627A-4127-BCC3-8F8D7FFB30AD - a6d6b1bc926849d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for NFLInfo.fetchTeamData2() async -&gt; Swift.Array&lt;NFLInfo.Team&gt;"
+                  moduleName = "NFLInfo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyle.olson/Documents/Repositories/NFLInfo/NFLInfo/API/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "3352">
+               </Location>
+               <Location
+                  uuid = "CCCDD168-627A-4127-BCC3-8F8D7FFB30AD - a6d6b1bc92684916"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for NFLInfo.fetchTeamData2() async -&gt; Swift.Array&lt;NFLInfo.Team&gt;"
+                  moduleName = "NFLInfo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyle.olson/Documents/Repositories/NFLInfo/NFLInfo/API/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "2900">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

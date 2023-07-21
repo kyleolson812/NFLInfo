@@ -10,11 +10,13 @@ import SwiftData
 
 @Model
 public class Team {
-    public init(name: String, id: Int) {
+    public init(name: String, id: Int, url: URL) {
         self.name = name
         self.id = id
+        self.url = url
     }
     
     @Attribute(.unique) public var id: Int
     var name: String
+    var url: URL
 }
