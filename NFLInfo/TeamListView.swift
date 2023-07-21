@@ -11,16 +11,17 @@ import SwiftData
 
 struct TeamListView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query var teams: [Team]
+    @Query(sort: \Team.id) var teams: [Team]
     
+
     var body: some View {
         List(teams) { team in
-            Text(team.name)
+            HStack {
+                Text(String(team.id))
+                Text(team.name)
+            }
         }
         .task {
-            for team in teams {
-                modelContext.delete(team)
-            }
             let newTeams = await fetchTeamData()
             for team in newTeams {
                 modelContext.insert(team)

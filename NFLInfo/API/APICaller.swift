@@ -33,9 +33,10 @@ public func fetchTeamData() async -> [Team] {
             {
                 for team in teamsArr {
                     if let teamDict = team["team"] as? [String: Any],
-                       let teamSlug = teamDict["slug"] as? String
+                       let teamSlug = teamDict["slug"] as? String,
+                       let teamID = teamDict["id"] as? String
                     {
-                        newTeams.append(Team(name: teamSlug))
+                        newTeams.append(Team(name: teamSlug, id: Int(teamID) ?? 999))
                     }
                 }
                 return newTeams
