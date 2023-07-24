@@ -15,7 +15,25 @@ struct TeamListView: View {
     
 
     var body: some View {
-        List(teams) { team in
+        NavigationView {
+            List(teams, id: \.id) { team in
+                teamRow(team: team)
+            }
+            .task {
+                do {
+                    let newTeams = try await fetchTeamData()
+                    for team in newTeams {
+                        modelContext.insert(team)
+                    }
+                } catch let error {
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder func teamRow(team: Team) -> some View {
+        NavigationLink(destination: TeamDetailView()) {
             HStack {
                 Text(String(team.id))
                 Text(team.name)
@@ -24,18 +42,11 @@ struct TeamListView: View {
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20) // Adjust the frame size as needed
+                        .frame(width: 30, height: 30) // Adjust the frame size as needed
                 } placeholder: {
                     // Placeholder view while the image is being loaded
                     Color.gray // You can use any view as a placeholder (e.g., a spinner, an activity indicator, etc.)
                 }
-
-            }
-        }
-        .task {
-            let newTeams = await fetchTeamData2()
-            for team in newTeams {
-                modelContext.insert(team)
             }
         }
     }

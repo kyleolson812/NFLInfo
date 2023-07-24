@@ -16,6 +16,7 @@
 		3707E2752A65CA61004EDCE4 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3707E2742A65CA61004EDCE4 /* Team.swift */; };
 		3707E2782A65CAE1004EDCE4 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3707E2772A65CAE1004EDCE4 /* APICaller.swift */; };
 		3707E27A2A65CE9A004EDCE4 /* TeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3707E2792A65CE9A004EDCE4 /* TeamListView.swift */; };
+		374A21DB2A6F179400204992 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A21DA2A6F179400204992 /* TeamDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		3707E2742A65CA61004EDCE4 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		3707E2772A65CAE1004EDCE4 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		3707E2792A65CE9A004EDCE4 /* TeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListView.swift; sourceTree = "<group>"; };
+		374A21DA2A6F179400204992 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		377050272A6B1D73009DA0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				3707E2732A65CA46004EDCE4 /* Models */,
 				3707E2492A65CA25004EDCE4 /* NFLInfoApp.swift */,
 				3707E2792A65CE9A004EDCE4 /* TeamListView.swift */,
+				374A21DA2A6F179400204992 /* TeamDetailView.swift */,
 				3707E24D2A65CA27004EDCE4 /* Assets.xcassets */,
 				3707E24F2A65CA27004EDCE4 /* Preview Content */,
 			);
@@ -284,6 +287,7 @@
 				3707E2752A65CA61004EDCE4 /* Team.swift in Sources */,
 				3707E27A2A65CE9A004EDCE4 /* TeamListView.swift in Sources */,
 				3707E24A2A65CA25004EDCE4 /* NFLInfoApp.swift in Sources */,
+				374A21DB2A6F179400204992 /* TeamDetailView.swift in Sources */,
 				3707E2782A65CAE1004EDCE4 /* APICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
