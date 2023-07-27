@@ -43,7 +43,10 @@ public func fetchTeamData() async throws -> [Team] {
               let id = json["id"] as? String,
               let logos = json["logos"] as? [[String: Any]],
               let logo = logos.first,
-              let logoURL = logo["href"] as? String else { throw APIError.teamDataError }
+              let logoURL = logo["href"] as? String,
+              let athletes = json["athletes"] as? [String: Any],
+              let athletesLink = athletes["$ref"] as? String
+        else { throw APIError.teamDataError }
                     
         if let newURL = URL(string: logoURL) {
             print(slug)
@@ -55,6 +58,14 @@ public func fetchTeamData() async throws -> [Team] {
     }
             
     return newTeams
+}
+
+public func getPlayers(link: URL) async throws -> [Player] {
+    let (data, _) = try await URLSession.shared.data(from: link)
+
+    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+          let playersArray = json["items"] as? [[String: Any]] else { throw APIError.footballAPINotFound }
+    
 }
 
 // old code

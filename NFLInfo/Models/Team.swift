@@ -17,6 +17,7 @@ public class Team {
     }
     
     @Attribute(.unique) public var id: Int
-    var name: String
     var url: URL
+    var name: String
+    var players: [Player]
 }
