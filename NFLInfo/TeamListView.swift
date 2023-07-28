@@ -37,6 +37,7 @@ struct TeamListView: View {
             HStack {
                 Text(String(team.id))
                 Text(team.name)
+                Text(team.location)
                 AsyncImage(url: team.url) { image in
                     // Customize the image view using the loaded image
                     image

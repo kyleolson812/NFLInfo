@@ -41,6 +41,7 @@ public func fetchTeamData() async throws -> [Team] {
         guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
               let slug = json["slug"] as? String,
               let id = json["id"] as? String,
+              let location = json["location"] as? String,
               let logos = json["logos"] as? [[String: Any]],
               let logo = logos.first,
               let logoURL = logo["href"] as? String,
@@ -53,20 +54,20 @@ public func fetchTeamData() async throws -> [Team] {
             print(id)
             print(logoURL)
                             
-            newTeams.append(Team(name: slug, id: Int(id) ?? 999, url: newURL))
+            newTeams.append(Team(name: slug, id: Int(id) ?? 999, url: newURL, location: location))
         }
     }
             
     return newTeams
 }
 
-public func getPlayers(link: URL) async throws -> [Player] {
-    let (data, _) = try await URLSession.shared.data(from: link)
-
-    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-          let playersArray = json["items"] as? [[String: Any]] else { throw APIError.footballAPINotFound }
-    
-}
+//public func getPlayers(link: URL) async throws -> [Player] {
+//    let (data, _) = try await URLSession.shared.data(from: link)
+//
+//    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+//          let playersArray = json["items"] as? [[String: Any]] else { throw APIError.footballAPINotFound }
+//    
+//}
 
 // old code
 // public func fetchTeamData() async -> [Team] {

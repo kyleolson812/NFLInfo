@@ -18,6 +18,7 @@ public class Player {
     
     @Attribute(.unique) public var id: Int
     @Relationship(.nullify, inverse: \Team.players)
+    @Relationship(.cascade, .encrypt, originalName: "test", inverse: \Team.players, hashModifier: "123")
     var team: Team?
     var name: String
 
