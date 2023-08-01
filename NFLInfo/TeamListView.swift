@@ -12,21 +12,40 @@ import SwiftData
 struct TeamListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Team.id) var teams: [Team]
-    
+    @State private var showingSheet = false
 
     var body: some View {
         NavigationView {
-            List(teams, id: \.id) { team in
-                teamRow(team: team)
-            }
-            .task {
-                do {
-                    let newTeams = try await fetchTeamData()
-                    for team in newTeams {
-                        modelContext.insert(team)
+            VStack {
+                List(teams, id: \.id) { team in
+                    teamRow(team: team)
+                        .swipeActions {
+                            Button(role: .destructive) {
+                                print("Deleting team: \(team.name)")
+                                modelContext.delete(team)
+                            } label: {
+                                Label("Delete", systemImage: "trash.fill")
+                            }
+                        }
+                }
+                .task {
+                    do {
+                        let newTeams = try await fetchTeamData()
+                        for team in newTeams {
+                            modelContext.insert(team)
+                        }
+                    } catch let error {
+                        print(error)
                     }
-                } catch let error {
-                    print(error)
+                }
+                CustomButtonView(action: {
+                    showingSheet = true
+                }, title: "Create Team")
+            }
+            .sheet(isPresented: $showingSheet) {
+                AddTeamView { team in
+                    modelContext.insert(team)
+                    showingSheet = false
                 }
             }
         }
@@ -37,7 +56,6 @@ struct TeamListView: View {
             HStack {
                 Text(String(team.id))
                 Text(team.name)
-                Text(team.location)
                 AsyncImage(url: team.url) { image in
                     // Customize the image view using the loaded image
                     image

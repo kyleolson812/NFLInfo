@@ -17,6 +17,8 @@
 		3707E2782A65CAE1004EDCE4 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3707E2772A65CAE1004EDCE4 /* APICaller.swift */; };
 		3707E27A2A65CE9A004EDCE4 /* TeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3707E2792A65CE9A004EDCE4 /* TeamListView.swift */; };
 		374A21DB2A6F179400204992 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A21DA2A6F179400204992 /* TeamDetailView.swift */; };
+		37A74A122A798DF500BD9733 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A74A112A798DF500BD9733 /* CustomButtonView.swift */; };
+		37A74A142A79917700BD9733 /* AddTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A74A132A79917700BD9733 /* AddTeamView.swift */; };
 		37ACAD802A72FEED0075F2CB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACAD7F2A72FEED0075F2CB /* Player.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		3707E2792A65CE9A004EDCE4 /* TeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListView.swift; sourceTree = "<group>"; };
 		374A21DA2A6F179400204992 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		377050272A6B1D73009DA0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		37A74A112A798DF500BD9733 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		37A74A132A79917700BD9733 /* AddTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamView.swift; sourceTree = "<group>"; };
 		37ACAD7F2A72FEED0075F2CB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +107,7 @@
 		3707E2482A65CA25004EDCE4 /* NFLInfo */ = {
 			isa = PBXGroup;
 			children = (
+				37A74A102A798DE100BD9733 /* Views */,
 				377050272A6B1D73009DA0CE /* Info.plist */,
 				3707E2762A65CA9F004EDCE4 /* API */,
 				3707E2732A65CA46004EDCE4 /* Models */,
@@ -155,6 +160,15 @@
 				3707E2772A65CAE1004EDCE4 /* APICaller.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		37A74A102A798DE100BD9733 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37A74A112A798DF500BD9733 /* CustomButtonView.swift */,
+				37A74A132A79917700BD9733 /* AddTeamView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,8 +305,10 @@
 				3707E27A2A65CE9A004EDCE4 /* TeamListView.swift in Sources */,
 				3707E24A2A65CA25004EDCE4 /* NFLInfoApp.swift in Sources */,
 				374A21DB2A6F179400204992 /* TeamDetailView.swift in Sources */,
+				37A74A122A798DF500BD9733 /* CustomButtonView.swift in Sources */,
 				37ACAD802A72FEED0075F2CB /* Player.swift in Sources */,
 				3707E2782A65CAE1004EDCE4 /* APICaller.swift in Sources */,
+				37A74A142A79917700BD9733 /* AddTeamView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

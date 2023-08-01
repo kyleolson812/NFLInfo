@@ -39,7 +39,7 @@ public func fetchTeamData() async throws -> [Team] {
         let (data, _) = try await URLSession.shared.data(from: apiUrl)
         
         guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-              let slug = json["slug"] as? String,
+              let displayName = json["displayName"] as? String,
               let id = json["id"] as? String,
               let location = json["location"] as? String,
               let logos = json["logos"] as? [[String: Any]],
@@ -50,11 +50,11 @@ public func fetchTeamData() async throws -> [Team] {
         else { throw APIError.teamDataError }
                     
         if let newURL = URL(string: logoURL) {
-            print(slug)
+            print(displayName)
             print(id)
             print(logoURL)
                             
-            newTeams.append(Team(name: slug, id: Int(id) ?? 999, url: newURL, location: location))
+            newTeams.append(Team(name: displayName, id: Int(id) ?? 999, url: newURL, location: location))
         }
     }
             
