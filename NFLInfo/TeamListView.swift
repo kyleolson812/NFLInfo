@@ -12,6 +12,7 @@ import SwiftData
 struct TeamListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Team.id) var teams: [Team]
+    @Query(sort: \Player.id) var players: [Player]
     @State private var showingSheet = false
 
     var body: some View {
@@ -29,14 +30,22 @@ struct TeamListView: View {
                         }
                 }
                 .task {
-                    do {
-                        let newTeams = try await fetchTeamData()
-                        for team in newTeams {
-                            modelContext.insert(team)
+                    if true {
+                        do {
+                            let newItems = try await fetchTeamData()
+                            
+                            for team in newItems.0 {
+                                modelContext.insert(team)
+                            }
+                            
+                            for player in newItems.1 {
+                                modelContext.insert(player)
+                            }
+                        } catch let error {
+                            print(error)
                         }
-                    } catch let error {
-                        print(error)
                     }
+
                 }
                 CustomButtonView(action: {
                     showingSheet = true
@@ -52,10 +61,11 @@ struct TeamListView: View {
     }
     
     @ViewBuilder func teamRow(team: Team) -> some View {
-        NavigationLink(destination: TeamDetailView()) {
+        NavigationLink(destination: TeamDetailView(team: team)) {
             HStack {
                 Text(String(team.id))
                 Text(team.name)
+                Text(team.players.first?.name ?? "potato")
                 AsyncImage(url: team.url) { image in
                     // Customize the image view using the loaded image
                     image

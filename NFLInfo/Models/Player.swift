@@ -10,16 +10,14 @@ import SwiftData
 
 @Model
 public class Player {
-    public init(name: String, id: Int, team: Team) {
+    public init(name: String, id: Int, team: Team? = nil) {
         self.name = name
         self.id = id
         self.team = team
     }
     
     @Attribute(.unique) public var id: Int
-    @Relationship(.nullify, inverse: \Team.players)
-    @Relationship(.cascade, .encrypt, originalName: "test", inverse: \Team.players, hashModifier: "123")
-    var team: Team?
+    @Relationship var team: Team?
     var name: String
 
 }

@@ -14,6 +14,6 @@ struct NFLInfoApp: App {
         WindowGroup {
             TeamListView()
         }
-        .modelContainer(for: [Team.self])
+        .modelContainer(for: [Team.self, Player.self])
     }
 }

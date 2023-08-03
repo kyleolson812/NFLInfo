@@ -23,7 +23,7 @@ struct AddTeamView: View {
                 .padding(.horizontal)
             CustomButtonView(action: {
                 if let newURL = URL(string: "test") {
-                    submitAction(.init(name: name, id: Int.random(in: 50...1000), url: newURL, location: location))
+                    submitAction(.init(name: name, id: Int.random(in: 50...1000), url: newURL, location: location, players: []))
                 }
             }, title: "Create Team")
         }
