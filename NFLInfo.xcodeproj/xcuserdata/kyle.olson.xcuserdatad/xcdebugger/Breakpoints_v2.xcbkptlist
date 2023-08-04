@@ -7,70 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "534C753F-E67B-46C7-B57E-13C6D83DBEE2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NFLInfo/TeamListView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BC7A6550-B4FC-4719-96A2-7782FD6BBDA8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NFLInfo/API/APICaller.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "getPlayers(playerListLink:team:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "BC7A6550-B4FC-4719-96A2-7782FD6BBDA8 - f0e37ac782c5bf23"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for NFLInfo.getPlayers(playerListLink: Foundation.URL, team: NFLInfo.Team) async throws -&gt; Swift.Array&lt;NFLInfo.Player&gt;"
-                  moduleName = "NFLInfo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kyle.olson/Documents/Repositories/NFLInfo/NFLInfo/API/APICaller.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "2424">
-               </Location>
-               <Location
-                  uuid = "BC7A6550-B4FC-4719-96A2-7782FD6BBDA8 - bab2d23460ea4321"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for NFLInfo.getPlayers(playerListLink: Foundation.URL, team: NFLInfo.Team) async throws -&gt; Swift.Array&lt;NFLInfo.Player&gt;"
-                  moduleName = "NFLInfo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kyle.olson/Documents/Repositories/NFLInfo/NFLInfo/API/APICaller.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "2700">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "869AFBE3-E48B-41BC-B00B-78B407366A31"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -78,8 +14,8 @@
             filePath = "NFLInfo/TeamDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "init(team:)"
             landmarkType = "7">
             <Locations>

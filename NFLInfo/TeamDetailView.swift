@@ -7,8 +7,12 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct TeamDetailView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Query(sort: \Player.id) var players: [Player]
+
     public init(team: Team) {
         self.team = team
     }
@@ -16,7 +20,6 @@ struct TeamDetailView: View {
 
     var body: some View {
         VStack {
-            Text("Detail View!")
             List(team.players, id: \.id) { player in
                 HStack {
                     Text(String(player.id))

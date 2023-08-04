@@ -12,7 +12,7 @@ import SwiftData
 struct NFLInfoApp: App {
     var body: some Scene {
         WindowGroup {
-            TeamListView()
+            MainTabbedView()
         }
         .modelContainer(for: [Team.self, Player.self])
     }

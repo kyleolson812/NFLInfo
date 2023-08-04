@@ -6,50 +6,96 @@
 //
 
 import Foundation
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct TeamListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Team.id) var teams: [Team]
     @Query(sort: \Player.id) var players: [Player]
+
+    @Binding var presentSideMenu: Bool
+
+    /// Sheet to create a new team.
     @State private var showingSheet = false
 
     var body: some View {
-        NavigationView {
-            VStack {
-                List(teams, id: \.id) { team in
-                    teamRow(team: team)
-                        .swipeActions {
-                            Button(role: .destructive) {
-                                print("Deleting team: \(team.name)")
-                                modelContext.delete(team)
-                            } label: {
-                                Label("Delete", systemImage: "trash.fill")
+        NavigationStack {
+            ZStack {
+                VStack {
+                    if teams.isEmpty {
+                        ProgressView()
+                    } else {
+                        withAnimation {
+                            VStack {
+                                List(teams, id: \.id) { team in
+                                    teamRow(team: team)
+                                        .swipeActions {
+                                            Button(role: .destructive) {
+                                                print("Deleting team: \(team.name)")
+                                                modelContext.delete(team)
+                                            } label: {
+                                                Label("Delete", systemImage: "trash.fill")
+                                            }
+                                        }
+                                }
                             }
-                        }
-                }
-                .task {
-                    if true {
-                        do {
-                            let newItems = try await fetchTeamData()
-                            
-                            for team in newItems.0 {
-                                modelContext.insert(team)
-                            }
-                            
-                            for player in newItems.1 {
-                                modelContext.insert(player)
-                            }
-                        } catch let error {
-                            print(error)
                         }
                     }
-
                 }
-                CustomButtonView(action: {
-                    showingSheet = true
-                }, title: "Create Team")
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        withAnimation {
+                            presentSideMenu.toggle()
+                        }
+                    }) {
+                        Image(systemName: "line.horizontal.3")
+                            .font(.title)
+                            .padding()
+                    }
+                }
+
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        withAnimation {
+                            showingSheet.toggle()
+                        }
+                    }) {
+                        Image(systemName: "plus")
+                            .font(.title)
+                            .padding()
+                    }
+                }
+            }
+            .task {
+                if teams.isEmpty {
+                    do {
+                        for team in teams {
+                            modelContext.delete(team)
+                        }
+                        for player in players {
+                            modelContext.delete(player)
+                        }
+                        try modelContext.save()
+                    } catch {
+                        print("Error: Failed to properly delete initial teams.")
+                    }
+
+                    do {
+                        let newItems = try await fetchData()
+
+                        for team in newItems.0 {
+                            modelContext.insert(team)
+                        }
+                        for player in newItems.0 {
+                            modelContext.insert(player)
+                        }
+                    } catch {
+                        print(error)
+                    }
+                }
             }
             .sheet(isPresented: $showingSheet) {
                 AddTeamView { team in
@@ -59,13 +105,12 @@ struct TeamListView: View {
             }
         }
     }
-    
+
     @ViewBuilder func teamRow(team: Team) -> some View {
         NavigationLink(destination: TeamDetailView(team: team)) {
             HStack {
                 Text(String(team.id))
                 Text(team.name)
-                Text(team.players.first?.name ?? "potato")
                 AsyncImage(url: team.url) { image in
                     // Customize the image view using the loaded image
                     image
@@ -79,8 +124,4 @@ struct TeamListView: View {
             }
         }
     }
-}
-
-#Preview {
-    TeamListView()
 }
