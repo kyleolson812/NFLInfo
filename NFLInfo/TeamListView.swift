@@ -18,12 +18,13 @@ struct TeamListView: View {
 
     /// Sheet to create a new team.
     @State private var showingSheet = false
+    @State private var showList = true
 
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack {
-                    if teams.isEmpty {
+                    if !showList {
                         ProgressView()
                     } else {
                         withAnimation {
@@ -70,7 +71,8 @@ struct TeamListView: View {
                 }
             }
             .task {
-                if teams.isEmpty {
+                if true {
+                    showList = false
                     do {
                         for team in teams {
                             modelContext.delete(team)
@@ -95,6 +97,7 @@ struct TeamListView: View {
                     } catch {
                         print(error)
                     }
+                    showList = true
                 }
             }
             .sheet(isPresented: $showingSheet) {
